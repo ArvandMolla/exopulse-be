@@ -3,6 +3,9 @@ import eventModel from "../models/event";
 
 const eventRouter = express.Router();
 
+eventRouter.get("/api/test", (req, res) => {
+  res.status(200).send("hello");
+});
 eventRouter.get(
   "/api/event",
   async (req: Request, res: Response, next: NextFunction) => {
@@ -23,7 +26,6 @@ eventRouter.get(
 eventRouter.post(
   "/api/event",
   async (req: Request, res: Response, next: NextFunction) => {
-    console.log(req.body);
     try {
       const newEvent = new eventModel(req.body);
       const createdEvent = await newEvent.save();
