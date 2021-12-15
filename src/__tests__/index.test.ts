@@ -7,7 +7,7 @@ dotenv.config();
 
 const request = supertest(server);
 
-describe("Testing suit #1", () => {
+describe("Endpoints Testing suite", () => {
   beforeAll((done) => {
     mongoose.connect(process.env.MONGO_TEST_CONNECTION!).then(() => {
       console.log("Connected to Atlas");
