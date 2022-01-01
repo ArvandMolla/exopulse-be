@@ -17,7 +17,6 @@ describe("Endpoints Testing suite", () => {
 
   it("should test that getting all events from api/event is working correctly", async () => {
     const response = await request.get("/api/event");
-
     expect(response.status).toBe(200);
     expect(response.body).toBeDefined();
   });
